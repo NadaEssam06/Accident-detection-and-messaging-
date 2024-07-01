@@ -55,7 +55,7 @@ void SendMessage()
 {
   mySerial.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
   delay(1000);  // Delay of 1000 milli seconds or 1 second
-  mySerial.println("AT+CMGS=\"+201023710419\"\r"); // Replace x with mobile number
+  mySerial.println("AT+CMGS=\"+x\"\r"); // Replace x with mobile number
   delay(1000);
   mySerial.println("sim900a sms");// The SMS text you want to send
   delay(100);
@@ -76,7 +76,7 @@ void ReceiveMessage()
 
 void MakeCall()
 {
-  mySerial.println("ATD+201023710419;"); // ATDxxxxxxxxxx; -- watch out here for semicolon at the end!!
+  mySerial.println("ATD+x;"); // ATDxxxxxxxxxx; -- watch out here for semicolon at the end!!
   Serial.println("Calling  "); // print response over serial port
   delay(1000);
 }
